@@ -2,7 +2,7 @@ exports.sendToken=(user,res,mess,statusCode)=>{
     const token = user.generateToken()
     
     res.status(statusCode).cookie("token",token,{
-        ...this.cookieOptions,
+        // ...this.cookieOptions,
         expires: new Date(Date.now()+15*24*60*1000)
     }).json({
         success:true,
